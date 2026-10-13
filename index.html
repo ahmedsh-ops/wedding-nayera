@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفافنا</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Allura&family=Amiri:wght@400;700&family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        a,
+        img {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .intro {
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.55) 100%),
+                url('New folder/ChatGPT Image Oct 13, 2026, 01_32_39 AM.png');
+            background-size: cover;
+            background-position: center;
+            transition: opacity 2s ease, visibility 2s ease;
+        }
+
+        .intro.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-card {
+            max-width: 480px;
+        }
+
+        .intro-title {
+            margin: 0 0 12px;
+            line-height: 1.2;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f0e6da;
+            font-family: 'Aref Ruqaa', serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-image {
+            position: relative;
+            max-width: 250px;
+            margin: 0 auto 20px;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .intro button {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            border: 0;
+            border-radius: 30px;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -30%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -30%) rotate(360deg);
+            }
+        }
+
+        .intro button img {
+            max-width: 100%;
+            height: auto;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .intro p {
+            margin: 0 0 28px;
+            font: 400 20px Montserrat, sans-serif;
+            color: #f0e6da;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        }
+
+
+
+        /* محتوى الدعوة */
+        #wedding-invitation {
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url("New folder/ChatGPT Image Oct 13, 2026, 03_28_24 AM.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #wedding-invitation .wedding-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #wedding-invitation .wedding-initials {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: clamp(48px, 10vh, 92px);
+            color: #101b35;
+            font: 500 clamp(22px, 4vw, 30px)/1 Georgia, serif;
+            letter-spacing: .13em;
+        }
+
+        #wedding-invitation .wedding-initials i {
+            color: #c6a66a;
+            font-size: .8em;
+            font-style: normal;
+        }
+
+        #wedding-invitation .wedding-basmala {
+            max-width: 90%;
+            margin: 0 auto;
+            color: #fffaf4;
+            font-family: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+            font-size: clamp(42px, 9vw, 80px);
+            font-weight: 700;
+            line-height: 1.9;
+            text-wrap: balance;
+            text-shadow: 0 2px 16px rgba(60, 40, 20, 0.35), 0 1px 4px rgba(60, 40, 20, 0.2);
+        }
+
+        #wedding-invitation .wedding-verse {
+            max-width: 85%;
+            margin: clamp(16px, 3vh, 28px) auto 0;
+            color: #f5ede2;
+            font-family: "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+            font-size: clamp(20px, 4.5vw, 34px);
+            font-weight: 400;
+            line-height: 2;
+            text-wrap: balance;
+            font-style: italic;
+            text-shadow: 0 1px 10px rgba(60, 40, 20, 0.3);
+        }
+
+        #wedding-invitation .wedding-divider {
+            width: min(70%, 260px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: clamp(20px, 4vh, 36px) auto clamp(20px, 4vh, 36px);
+            color: #e2d4c6;
+        }
+
+        #wedding-invitation .wedding-divider hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid rgba(255, 250, 244, 0.6);
+            margin: 0;
+        }
+
+        #wedding-invitation .wedding-divider span {
+            color: #f0e6da;
+            font-size: 18px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* مشغل الفينيل */
+        .vinyl-player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .vinyl-record {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle,
+                    #111 0%,
+                    #111 26%,
+                    rgba(255, 255, 255, 0.07) 27%, #1a1a1a 28%,
+                    rgba(255, 255, 255, 0.05) 33%, #1a1a1a 34%,
+                    rgba(255, 255, 255, 0.05) 38%, #1a1a1a 39%,
+                    rgba(255, 255, 255, 0.05) 43%, #1a1a1a 44%,
+                    rgba(255, 255, 255, 0.05) 48%, #1a1a1a 49%,
+                    rgba(255, 255, 255, 0.05) 53%, #1a1a1a 54%,
+                    rgba(255, 255, 255, 0.04) 58%, #1c1c1c 59%,
+                    #1c1c1c 100%);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55), 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+
+        .vinyl-record.is-spinning {
+            animation: vinylSpin 3s linear infinite;
+        }
+
+        @keyframes vinylSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vinyl-center {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(255, 250, 244, 0.22);
+            border: 1px solid rgba(255, 250, 244, 0.65);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+            transition: background 0.2s;
+        }
+
+        .vinyl-player:hover .vinyl-center {
+            background: rgba(255, 250, 244, 0.38);
+        }
+
+        .vinyl-icon {
+            color: #fffaf4;
+            font-size: 7px;
+            margin-right: -1px;
+            line-height: 1;
+        }
+
+        .vinyl-icon.is-pause {
+            margin-right: 0;
+            font-size: 7px;
+        }
+
+        .vinyl-labels {
+            text-align: center;
+        }
+
+        .vinyl-label-ar {
+            margin: 0;
+            color: #fffaf4;
+            font-family: "Amiri", "Noto Naskh Arabic", serif;
+            font-size: 17px;
+            font-weight: 700;
+            text-shadow: 0 1px 8px rgba(60, 40, 20, 0.3);
+            letter-spacing: 0.02em;
+        }
+
+        .vinyl-label-en {
+            margin: 3px 0 0;
+            color: #f0e6da;
+            font-family: Montserrat, sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-shadow: 0 1px 6px rgba(60, 40, 20, 0.25);
+        }
+
+        /* تفاصيل الدعوة */
+        .wedding-details-section {
+            width: 100%;
+            min-height: 100svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+            background-image: url("New folder/download.jpg");
+            background-size: cover;
+            background-position: center;
+
+            /* خلفية الورق البيج */
+            overflow: hidden;
+        }
+
+        .details-arch {
+            max-width: 480px;
+            text-align: center;
+            position: relative;
+        }
+
+
+        .details-names {
+            margin: 0;
+            direction: ltr;
+            font-family: "Pinyon Script", "Aref Ruqaa", serif;
+            font-weight: 300;
+            font-size: 2rem;
+            line-height: 2;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: rgb(36, 71, 103);
+        }
+
+        .details-names span {
+            font-size: .9em;
+        }
+
+        .details-caption {
+            margin: 0;
+            font-family: "Pinyon Script", "Aref Ruqaa", serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: rgb(20, 34, 47);
+        }
+
+        .details-doves {
+            position: absolute;
+            top: 0;
+            right: 6%;
+            width: 34%;
+            pointer-events: none;
+        }
+
+        .details-flowers {
+            position: absolute;
+            bottom: -4%;
+            left: -8%;
+            width: 116%;
+            pointer-events: none;
+        }
+
+
+        .countdown-section {
+            width: 100%;
+            min-height: 50svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 16px;
+            background: #f7f6f1;
+            text-align: center;
+        }
+
+        .countdown-inner {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .countdown-eyebrow {
+            margin: 0 0 24px;
+            font: 400 25px "Pinyon Script", "Aref Ruqaa", serif;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: #2a4a8a;
+        }
+
+        .countdown-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1103 / 345;
+        }
+
+        .countdown-frame-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .countdown-grid {
+            position: absolute;
+            inset: 18% 12%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(6px, 3vw, 28px);
+        }
+
+        .countdown-box {
+            flex: 1;
+            text-align: center;
+        }
+
+        .countdown-number {
+            display: block;
+            direction: ltr;
+            font-family: "Cormorant Garamond", "Playfair Display", serif;
+            font-size: clamp(22px, 7vw, 64px);
+            font-weight: 500;
+            line-height: 1;
+            color: #1f3b78;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-label {
+            display: block;
+            margin-top: 6px;
+            font-family: "Amiri", serif;
+            font-size: clamp(11px, 2.6vw, 20px);
+            font-weight: 700;
+            color: #5a77b5;
+        }
+
+        .countdown-date {
+            margin: 28px 0 0;
+            font: 400 14px Montserrat, sans-serif;
+            letter-spacing: .12em;
+            color: #1f3b78;
+        }
+
+        .countdown-done {
+            font-family: "Aref Ruqaa", serif;
+            font-size: clamp(22px, 6vw, 44px);
+            color: #1f3b78;
+        }
+
+        /* موقع الحفل */
+        .location-section {
+            width: 100%;
+            min-height: 80svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 64px 16px;
+            background:
+            Url('New folder/68207d196e05e441b3efc265dbd86967.JPG');
+            text-align: center;
+        }
+
+        .location-inner {
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .location-eyebrow {
+            margin: 0 0 20px;
+            font: 300 13px Montserrat, sans-serif;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: #f7f6f1;
+        }
+
+        .location-title {
+            margin: 0;
+            font-family: "Aref Ruqaa", serif;
+            font-size: clamp(34px, 8vw, 52px);
+            font-weight: 700;
+            color: #f7f6f1;
+        }
+
+        .location-divider {
+            width: min(60%, 220px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto;
+            color: #f7f6f1;
+        }
+
+        .location-divider hr {
+            flex: 1;
+            margin: 0;
+            border: none;
+            border-top: 1px solid rgba(49, 58, 107, 0.7);
+        }
+
+        .location-venue {
+            margin: 0 0 10px;
+            font-family: "Aref Ruqaa", serif;
+            font-size: clamp(24px, 6vw, 32px);
+            font-weight: 700;
+            color: #f7f6f1;
+        }
+
+        .location-address {
+            margin: 0 0 28px;
+            font-family: "Aref Ruqaa", serif;
+            font-size: clamp(16px, 4vw, 20px);
+            line-height: 1.9;
+            color: #f7f6f1;
+        }
+
+        .location-map {
+            padding: 8px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(49, 58, 107, 0.7);
+            border-radius: 18px;
+            background: rgba(255, 250, 240, 0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .location-map iframe {
+            display: block;
+            width: 100%;
+            height: clamp(240px, 55vw, 320px);
+            border: 0;
+            border-radius: 12px;
+        }
+
+        .location-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: min(100%, 300px);
+            padding: 16px 24px;
+            border-radius: 999px;
+            background: #f7f6f1;
+            color: #0a1433;
+            font-family: "Aref Ruqaa", serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .location-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+        }
+
+        .location-btn:active {
+            transform: translateY(0);
+        }
+
+        .end-section {
+            width: 100%;
+            min-height: 20svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+            background-image: url('New folder/WhatsApp\ Image\ 2026-10-13\ at\ 10.25.04\ PM.jpeg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .end-section p {
+            margin: 0;
+            font-family: "Aref Ruqaa", serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #102347;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="intro" id="intro" aria-label="مقدمة الدعوة">
+        <div class="intro-card">
+            <h1 class="intro-title">دعــوة زفـافنـا</h1>
+            <div class="intro-image">
+                <img src="New folder/ChatGPT Image Oct 13, 2026, 01_42_22 AM.png" alt="">
+                <button id="openInvitation" type="button"><img src="New folder/ChatGPT Image Oct 13, 2026, 01_54_20 AM.png"
+                        alt=""></button>
+            </div>
+            <p class="  ">CLICK THE SEAL TO OPEN</p>
+
+        </div>
+    </section>
+
+    <section id="wedding-invitation">
+        <div class="wedding-arch">
+            <div class="wedding-content">
+
+                <h1 class="wedding-basmala">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </h1>
+
+                <p class="wedding-verse">
+                    ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا ﴾
+                </p>
+
+                <div class="wedding-divider" aria-hidden="true">
+                    <hr>
+                    <span>✦</span>
+                    <hr>
+                </div>
+
+                <div class="vinyl-player" id="vinylPlayer" role="button" tabindex="0" aria-label="تشغيل الموسيقى">
+                    <div class="vinyl-record" id="vinylRecord">
+                        <div class="vinyl-center">
+                            <span class="vinyl-icon" id="vinylIcon" aria-hidden="true">▶</span>
+                        </div>
+                    </div>
+                    <div class="vinyl-labels">
+                        <p class="vinyl-label-ar" id="vinylLabelAr">لتشغيل الموسيقى أنقر هنا</p>
+                        <p class="vinyl-label-en">For play music click here</p>
+                    </div>
+                </div>
+
+                <audio class="wedding-audio" src="New folder/WhatsApp Audio 2026-10-13 at 4.20.36 AM.mpeg" loop preload="none"
+                    aria-label="مشغل موسيقى الدعوة"></audio>
+            </div>
+        </div>
+    </section>
+
+    <section class="wedding-details-section">
+        <div class="details-card">
+
+            <div class="details-arch">
+                <p class="details-caption details-caption--top">تلاقت الأرواح وانعَقَدَ القَلبُ بالقلب اللهمَّ اجْعَلْهُ
+                    عَقْدَاً تَنعَقِدُ بِهِ سَعادَتهُم
+
+                    يَسُرنا أَن نَدْعُوكُم لِحُصُورٍ حفل زفافنا</p>
+
+                <h2 class="details-names" style="margin-top: 30px;">Ahmed</h2>
+                <h2 class="details-names" style=""><span>&amp;</span></h2>
+                <h2 class="details-names" style="margin-bottom: 30px;">Nayra</h2>
+
+
+                <p class="details-caption details-caption--bottom">
+                    بارك الله لهما وبارك عليهما وجمع بينهما في خير
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown-section" id="countdown">
+        <div class="countdown-inner">
+            <p class="countdown-eyebrow">✦ &nbsp; باقي على فرحتنا &nbsp; ✦</p>
+
+            <div class="countdown-frame">
+                <img class="countdown-frame-img" src="New folder/frame-horizontal.png" alt="">
+
+                <div class="countdown-grid" id="countdownGrid" dir="rtl">
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="cdDays">00</span>
+                        <span class="countdown-label">يوم</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="cdHours">00</span>
+                        <span class="countdown-label">ساعة</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="cdMinutes">00</span>
+                        <span class="countdown-label">دقيقة</span>
+                    </div>
+                    <div class="countdown-box">
+                        <span class="countdown-number" id="cdSeconds">00</span>
+                        <span class="countdown-label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="countdown-date">الجمعة · 23 أكتوبر 2026 · 7:00 PM</p>
+        </div>
+    </section>
+
+    <section class="location-section" id="location">
+        <div class="location-inner">
+            <h2 class="location-title">✦ &nbsp; موقع الحفل &nbsp; ✦</h2>
+
+            <div class="location-divider" aria-hidden="true">
+                <hr><span>✦</span>
+                <hr>
+            </div>
+
+            <h3 class="location-venue"> GOLDEN PLAZA </h3>
+            <p class="location-address">
+                القاهرة، مصر
+            </p>
+
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps?q=Golden+Plaza+Cairo&output=embed" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="موقع الحفل"></iframe>
+            </div>
+
+            <a class="location-btn" href="https://maps.app.goo.gl/wYrs9tNckLu8uKqt6?g_st=iwb" target="_blank" rel="noopener">
+                افتح في خرائط جوجل
+            </a>
+        </div>
+    </section>
+
+    <section class="end-section"> 
+        <p> أحمد طلبها من أبوها للعمر <br> واليوم نيره للعمر من نصيبه</p>
+    </section>
+
+    <script>
+        const intro = document.getElementById("intro");
+        const openButton = document.getElementById("openInvitation");
+
+        function closeIntro() {
+            intro.classList.add("is-hidden");
+        }
+
+        // تختفي عند الضغط على الزر
+        openButton.addEventListener("click", closeIntro);
+
+        (() => {
+            const section = document.getElementById("wedding-invitation");
+            if (!section) return;
+
+            const audio = section.querySelector(".wedding-audio");
+            const player = document.getElementById("vinylPlayer");
+            const record = document.getElementById("vinylRecord");
+            const icon = document.getElementById("vinylIcon");
+            const labelAr = document.getElementById("vinylLabelAr");
+
+            // تحديث الواجهة بناءً على حالة التشغيل
+            const updateUI = () => {
+                const playing = !audio.paused;
+                record.classList.toggle("is-spinning", playing);
+                icon.textContent = playing ? "⏸" : "▶";
+                icon.classList.toggle("is-pause", playing);
+                labelAr.textContent = playing
+                    ? "أنقر لإيقاف الموسيقى"
+                    : "لتشغيل الموسيقى أنقر هنا";
+                player.setAttribute("aria-label", playing ? "إيقاف الموسيقى" : "تشغيل الموسيقى");
+            };
+
+            // النقر بالفأرة أو لوحة المفاتيح
+            const toggle = async () => {
+                if (audio.paused) {
+                    try { await audio.play(); }
+                    catch { labelAr.textContent = "تعذّر تشغيل الملف"; }
+                } else {
+                    audio.pause();
+                }
+            };
+
+            player.addEventListener("click", toggle);
+            player.addEventListener("keydown", e => {
+                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+            });
+
+            audio.addEventListener("play", updateUI);
+            audio.addEventListener("pause", updateUI);
+            audio.addEventListener("ended", updateUI);
+
+            // لا تشغيل تلقائي — المستخدم هو من يبدأ التشغيل
+        })();
+
+        (() => {
+            const target = new Date("2026-10-23T19:00:00+03:00").getTime();
+            const grid = document.getElementById("countdownGrid");
+            const elDays = document.getElementById("cdDays");
+            const elHours = document.getElementById("cdHours");
+            const elMinutes = document.getElementById("cdMinutes");
+            const elSeconds = document.getElementById("cdSeconds");
+            const pad = n => String(n).padStart(2, "0");
+
+            const tick = () => {
+                const diff = target - Date.now();
+
+                if (diff <= 0) {
+                    grid.innerHTML = '<p class="countdown-done">النهاردة فرحنا 🤍</p>';
+                    clearInterval(timer);
+                    return;
+                }
+
+                elDays.textContent = pad(Math.floor(diff / 86400000));
+                elHours.textContent = pad(Math.floor(diff / 3600000) % 24);
+                elMinutes.textContent = pad(Math.floor(diff / 60000) % 60);
+                elSeconds.textContent = pad(Math.floor(diff / 1000) % 60);
+            };
+
+            tick();
+            const timer = setInterval(tick, 1000);
+        })();
+    </script>
+</body>
+
+</html>
