@@ -468,7 +468,7 @@
             align-items: center;
             padding: 64px 16px;
             background:
-            Url('New folder/68207d196e05e441b3efc265dbd86967.jpg');
+                Url('New folder/68207d196e05e441b3efc265dbd86967.jpg');
             text-align: center;
         }
 
@@ -598,8 +598,8 @@
             <h1 class="intro-title">دعــوة زفـافنـا</h1>
             <div class="intro-image">
                 <img src="New folder/envelope.webp" alt="" decoding="async">
-                <button id="openInvitation" type="button"><img src="New folder/seal.webp"
-                        alt="" decoding="async"></button>
+                <button id="openInvitation" type="button"><img src="New folder/seal.webp" alt=""
+                        decoding="async"></button>
             </div>
             <p class="  ">CLICK THE SEAL TO OPEN</p>
 
@@ -636,8 +636,8 @@
                     </div>
                 </div>
 
-                <audio class="wedding-audio" src="New folder/WhatsApp Audio 2026-10-13 at 4.20.36 AM.mpeg" loop preload="none"
-                    aria-label="مشغل موسيقى الدعوة"></audio>
+                <audio class="wedding-audio" src="New folder/WhatsApp Audio 2026-10-13 at 4.20.36 AM.mpeg" loop
+                    preload="none" aria-label="مشغل موسيقى الدعوة"></audio>
             </div>
         </div>
     </section>
@@ -668,7 +668,8 @@
             <p class="countdown-eyebrow">✦ &nbsp; باقي على فرحتنا &nbsp; ✦</p>
 
             <div class="countdown-frame">
-                <img class="countdown-frame-img" src="New folder/frame-horizontal.webp" alt="" loading="lazy" decoding="async">
+                <img class="countdown-frame-img" src="New folder/frame-horizontal.webp" alt="" loading="lazy"
+                    decoding="async">
 
                 <div class="countdown-grid" id="countdownGrid" dir="rtl">
                     <div class="countdown-box">
@@ -709,17 +710,19 @@
             </p>
 
             <div class="location-map">
-                <iframe src="https://www.google.com/maps?q=Golden+Plaza+Cairo&output=embed" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="موقع الحفل"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216.27169863557833!2d31.294749694877254!3d29.854259903145724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458370071a24a5f%3A0xf662ff36eec841f6!2z2YLYp9i52Kkg2KzZiNmE2K_ZhiDYqNmE2KfYstin!5e0!3m2!1sar!2seg!4v1791974528069!5m2!1sar!2seg"
+                    allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="موقع الحفل"></iframe>
             </div>
 
-            <a class="location-btn" href="https://maps.app.goo.gl/wYrs9tNckLu8uKqt6?g_st=iwb" target="_blank" rel="noopener">
+            <a class="location-btn" href="https://maps.app.goo.gl/wYrs9tNckLu8uKqt6?g_st=iwb" target="_blank"
+                rel="noopener">
                 افتح في خرائط جوجل
             </a>
         </div>
     </section>
 
-    <section class="end-section"> 
+    <section class="end-section">
         <p> أحمد طلبها من أبوها للعمر <br> واليوم نيره للعمر من نصيبه</p>
     </section>
 
@@ -759,8 +762,8 @@
             // النقر بالفأرة أو لوحة المفاتيح
             const toggle = async () => {
                 if (audio.paused) {
-                    try { await audio.play(); }
-                    catch { labelAr.textContent = "تعذّر تشغيل الملف"; }
+                    try {await audio.play();}
+                    catch {labelAr.textContent = "تعذّر تشغيل الملف";}
                 } else {
                     audio.pause();
                 }
@@ -768,7 +771,7 @@
 
             player.addEventListener("click", toggle);
             player.addEventListener("keydown", e => {
-                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+                if (e.key === "Enter" || e.key === " ") {e.preventDefault(); toggle();}
             });
 
             audio.addEventListener("play", updateUI);
